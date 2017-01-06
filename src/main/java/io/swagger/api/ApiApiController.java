@@ -28,9 +28,13 @@ public class ApiApiController implements ApiApi {
     }
 
     public ResponseEntity<String> tokenGet() {
-        HttpHeaders responseHeaders = new HttpHeaders();
-        String token = "03c5e92c-292d-45f6-a74b-dc7981f6d821";
-        return new ResponseEntity<String>(token, responseHeaders, HttpStatus.OK);
+      HttpHeaders responseHeaders = new HttpHeaders();
+
+      responseHeaders.set("pragma", "no-cache");
+      responseHeaders.set("content-encoding", "gzip");
+      
+      String token = "03c5e92c-292d-45f6-a74b-dc7981f6d821";
+      return new ResponseEntity<String>(token, responseHeaders, HttpStatus.OK);
     }
 
     public ResponseEntity<Integer> triangleTypeGet(@ApiParam(value = "The length of side a", required = true) @RequestParam(value = "a", required = true) Integer a,
