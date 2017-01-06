@@ -1,6 +1,7 @@
 package io.swagger.api;
 
 
+import io.swagger.Utils;
 import io.swagger.annotations.*;
 
 import org.springframework.http.HttpStatus;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.rmi.CORBA.Util;
 import java.util.List;
 
 
@@ -22,7 +24,7 @@ import java.util.List;
 public class ApiApiController implements ApiApi {
 
     public ResponseEntity<Long> fibonacciGet(@ApiParam(value = "The index (n) of the fibonacci sequence", required = true) @RequestParam(value = "n", required = true) Long n) {
-        // do some magic!
+        int body = Utils.fibonacci(n);
         return new ResponseEntity<Long>(HttpStatus.OK);
     }
 
