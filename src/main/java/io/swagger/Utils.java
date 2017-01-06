@@ -1,5 +1,7 @@
 package io.swagger;
 
+import java.util.StringTokenizer;
+
 /**
  * Created by richardspellman on 6/1/17.
  */
@@ -27,7 +29,20 @@ public class Utils {
   }
 
   public static String reverseWords(String sentence){
-    return "";
+    StringTokenizer tokenizer = new StringTokenizer(sentence);
+    StringBuilder reversed = new StringBuilder();
+    while (tokenizer.hasMoreTokens()){
+      reversed.append(reverseWord((String) tokenizer.nextElement()) + " ");
+    }
+    return reversed.toString();
+  }
+
+  public static String reverseWord(String word){
+    StringBuilder sb = new StringBuilder();
+    for(int i = word.length() - 1; i > -1; i--){
+      sb.append(word.charAt(i));
+    }
+    return sb.toString();
   }
 
   public static String token(){
@@ -36,5 +51,10 @@ public class Utils {
 
   public static String triangleType(int a, int b, int c){
     return "";
+  }
+
+  public static void main(String[] args){
+    System.out.println(reverseWords("this is a sentence"));
+    System.out.println(reverseWord("pumpernickel"));
   }
 }
