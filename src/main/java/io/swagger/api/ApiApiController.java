@@ -5,6 +5,7 @@ import io.swagger.Utils;
 import io.swagger.annotations.*;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -29,6 +30,9 @@ public class ApiApiController implements ApiApi {
 
     public ResponseEntity<String> tokenGet() {
       HttpHeaders responseHeaders = new HttpHeaders();
+      responseHeaders.setCacheControl("no-cache");
+      responseHeaders.setPragma("no-cache");
+      responseHeaders.setContentType(MediaType.APPLICATION_JSON);
 
 //      {
 //        "pragma": "no-cache",
