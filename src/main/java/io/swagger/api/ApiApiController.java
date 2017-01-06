@@ -15,7 +15,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class ApiApiController implements ApiApi {
 
     public ResponseEntity<Long> fibonacciGet(@ApiParam(value = "The index (n) of the fibonacci sequence", required = true) @RequestParam(value = "n", required = true) Long n) {
-        long result = Utils.fibonacci(n);
+      long result;
+      try {
+        result = Utils.fibonacci(n);
+      } catch(NumberFormatException e){
+        return new ResponseEntity<Long>(HttpStatus.BAD_REQUEST);
+      }
         return new ResponseEntity<Long>(result,HttpStatus.OK);
     }
 

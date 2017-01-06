@@ -10,6 +10,9 @@ public class Utils {
 
   public static int fibonacci(long n){
 
+    if(Math.abs(n) > 92){
+      throw new NumberFormatException();
+    }
     if(n == 0){
       return 0;
     } else if(n < 0){
