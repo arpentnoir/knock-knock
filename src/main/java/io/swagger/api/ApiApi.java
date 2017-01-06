@@ -30,11 +30,11 @@ public interface ApiApi {
 
     @ApiOperation(value = "Reverses the letters of each word in a sentence.", notes = "Reverses the letters of each word in a sentence.", response = Long.class, tags={ "ReverseWords", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = Long.class) })
+        @ApiResponse(code = 200, message = "OK", response = String.class) })
     @RequestMapping(value = "/api/ReverseWords",
         produces = { "application/json", "text/json" }, 
         method = RequestMethod.GET)
-    ResponseEntity<Long> reverseWordsGet(@ApiParam(value = "A sentence") @RequestParam(value = "sentence", required = false) String sentence);
+    ResponseEntity<String> reverseWordsGet(@ApiParam(value = "A sentence") @RequestParam(value = "sentence", required = false) String sentence);
 
 
     @ApiOperation(value = "Your token.", notes = "Your token.", response = String.class, tags={ "Token", })
