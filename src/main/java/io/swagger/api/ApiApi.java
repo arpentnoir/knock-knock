@@ -22,7 +22,7 @@ public interface ApiApi {
     @ApiOperation(value = "Returns the nth fibonacci number.", notes = "Returns the nth number in the fibonacci sequence.", response = Long.class, tags={ "Fibonacci", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = Long.class) })
-    @RequestMapping(value = "api/Fibonacci",
+    @RequestMapping(value = "/api/Fibonacci",
         produces = { "application/json", "text/json" },
         method = RequestMethod.GET)
     ResponseEntity<Long> fibonacciGet(@ApiParam(value = "The index (n) of the fibonacci sequence", required = true) @RequestParam(value = "n", required = true) Long n);
@@ -31,16 +31,16 @@ public interface ApiApi {
     @ApiOperation(value = "Reverses the letters of each word in a sentence.", notes = "Reverses the letters of each word in a sentence.", response = Long.class, tags={ "ReverseWords", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = Long.class) })
-    @RequestMapping(value = "api/ReverseWords",
+    @RequestMapping(value = "/api/ReverseWords",
         produces = { "application/json", "text/json" }, 
         method = RequestMethod.GET)
-    ResponseEntity<String> reverseWordsGet(@ApiParam(value = "A sentence") @RequestParam(value = "sentence", required = false) String sentence);
+    ResponseEntity<Long> reverseWordsGet(@ApiParam(value = "A sentence") @RequestParam(value = "sentence", required = false) String sentence);
 
 
     @ApiOperation(value = "Your token.", notes = "Your token.", response = String.class, tags={ "Token", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = String.class) })
-    @RequestMapping(value = "api/Token",
+    @RequestMapping(value = "/api/Token",
         produces = { "application/json", "text/json" }, 
         method = RequestMethod.GET)
     ResponseEntity<String> tokenGet();
@@ -49,7 +49,7 @@ public interface ApiApi {
     @ApiOperation(value = "Returns the type of triange given the lengths of its sides.", notes = "Returns the type of triange given the lengths of its sides", response = Integer.class, tags={ "TriangleType", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = Integer.class) })
-    @RequestMapping(value = "api/TriangleType",
+    @RequestMapping(value = "/api/TriangleType",
         produces = { "application/json", "text/json" }, 
         method = RequestMethod.GET)
     ResponseEntity<Integer> triangleTypeGet(@ApiParam(value = "The length of side a", required = true) @RequestParam(value = "a", required = true) Integer a,

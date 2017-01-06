@@ -22,10 +22,10 @@ public class ApiApiController implements ApiApi {
         return new ResponseEntity<Long>(result, responseHeaders,HttpStatus.OK);
     }
 
-    public ResponseEntity<String> reverseWordsGet(@ApiParam(value = "A sentence") @RequestParam(value = "sentence", required = false) String sentence) {
+    public ResponseEntity<Long> reverseWordsGet(@ApiParam(value = "A sentence") @RequestParam(value = "sentence", required = false) String sentence) {
         HttpHeaders responseHeaders = new HttpHeaders();
-        String result = Utils.reverseWords(sentence);
-        return new ResponseEntity<String>(result, responseHeaders, HttpStatus.OK);
+        Long result = Long.decode(Utils.reverseWords(sentence));
+        return new ResponseEntity<Long>(result, responseHeaders, HttpStatus.OK);
     }
 
     public ResponseEntity<String> tokenGet() {
