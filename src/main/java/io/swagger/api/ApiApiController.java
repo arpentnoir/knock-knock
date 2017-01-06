@@ -30,9 +30,9 @@ public class ApiApiController implements ApiApi {
     public ResponseEntity<String> tokenGet() {
       HttpHeaders responseHeaders = new HttpHeaders();
 
-      responseHeaders.set("pragma", "no-cache");
-      responseHeaders.set("content-encoding", "gzip");
-      
+      //responseHeaders.set("pragma", "no-cache");
+      //responseHeaders.set("content-encoding", "gzip");
+
       String token = "03c5e92c-292d-45f6-a74b-dc7981f6d821";
       return new ResponseEntity<String>(token, responseHeaders, HttpStatus.OK);
     }
