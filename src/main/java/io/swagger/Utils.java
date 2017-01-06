@@ -10,7 +10,7 @@ public class Utils {
 
   public static int fibonacci(long n){
 
-    if(Math.abs(n) > 92){
+    if(Math.abs(n) > 92 || n == Long.MIN_VALUE){
       throw new NumberFormatException();
     } else if(n == 0){
       return 0;
