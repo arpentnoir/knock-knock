@@ -56,7 +56,7 @@ public class Utils {
 
     if(a <= 0 || b <= 0 || c <= 0){
       return "\"Error\"";
-    } else if(array[2] > array[0] + array[1]){
+    } else if(array[2] >= array[0] + array[1]){
       return "\"Error\"";
     } else if (a == b & a == c){
       return "\"Equilateral\"";
