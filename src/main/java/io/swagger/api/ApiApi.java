@@ -48,12 +48,12 @@ public interface ApiApi {
 
     @ApiOperation(value = "Returns the type of triange given the lengths of its sides.", notes = "Returns the type of triange given the lengths of its sides", response = Integer.class, tags={ "TriangleType", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = Integer.class) })
+        @ApiResponse(code = 200, message = "OK", response = String.class) })
     @RequestMapping(value = "/api/triangletype",
         produces = { "application/json", "text/json" }, 
         method = RequestMethod.GET)
-    ResponseEntity<Integer> triangleTypeGet(@ApiParam(value = "The length of side a", required = true) @RequestParam(value = "a", required = true) Integer a,
-        @ApiParam(value = "The length of side b", required = true) @RequestParam(value = "b", required = true) Integer b,
-        @ApiParam(value = "The length of side c", required = true) @RequestParam(value = "c", required = true) Integer c);
+    ResponseEntity<String> triangleTypeGet(@ApiParam(value = "The length of side a", required = true) @RequestParam(value = "a", required = true) Integer a,
+                                           @ApiParam(value = "The length of side b", required = true) @RequestParam(value = "b", required = true) Integer b,
+                                           @ApiParam(value = "The length of side c", required = true) @RequestParam(value = "c", required = true) Integer c);
 
 }

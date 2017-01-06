@@ -3,9 +3,7 @@ package io.swagger.api;
 
 import io.swagger.Utils;
 import io.swagger.annotations.*;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,28 +15,25 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class ApiApiController implements ApiApi {
 
     public ResponseEntity<Long> fibonacciGet(@ApiParam(value = "The index (n) of the fibonacci sequence", required = true) @RequestParam(value = "n", required = true) Long n) {
-      HttpHeaders responseHeaders = new HttpHeaders();
         long result = Utils.fibonacci(n);
-        return new ResponseEntity<Long>(result, responseHeaders,HttpStatus.OK);
+        return new ResponseEntity<Long>(result,HttpStatus.OK);
     }
 
     public ResponseEntity<String> reverseWordsGet(@ApiParam(value = "A sentence") @RequestParam(value = "sentence", required = false) String sentence) {
-        HttpHeaders responseHeaders = new HttpHeaders();
         String result = Utils.reverseWords(sentence);
-        return new ResponseEntity<String>(result, responseHeaders, HttpStatus.OK);
+        return new ResponseEntity<String>(result, HttpStatus.OK);
     }
 
     public ResponseEntity<String> tokenGet() {
-      HttpHeaders responseHeaders = new HttpHeaders();
       String token = "\"03c5e92c-292d-45f6-a74b-dc7981f6d821\"";
       return new ResponseEntity<String>(token, HttpStatus.OK);
     }
 
-    public ResponseEntity<Integer> triangleTypeGet(@ApiParam(value = "The length of side a", required = true) @RequestParam(value = "a", required = true) Integer a,
-        @ApiParam(value = "The length of side b", required = true) @RequestParam(value = "b", required = true) Integer b,
-        @ApiParam(value = "The length of side c", required = true) @RequestParam(value = "c", required = true) Integer c) {
-        // do some magic!
-        return new ResponseEntity<Integer>(HttpStatus.OK);
+    public ResponseEntity<String> triangleTypeGet(@ApiParam(value = "The length of side a", required = true) @RequestParam(value = "a", required = true) Integer a,
+                                                  @ApiParam(value = "The length of side b", required = true) @RequestParam(value = "b", required = true) Integer b,
+                                                  @ApiParam(value = "The length of side c", required = true) @RequestParam(value = "c", required = true) Integer c) {
+        String result = Utils.triangleType(a, b, c);
+        return new ResponseEntity<String>(result, HttpStatus.OK);
     }
 
 }
