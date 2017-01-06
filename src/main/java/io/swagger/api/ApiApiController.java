@@ -3,7 +3,7 @@ package io.swagger.api;
 
 import io.swagger.Utils;
 import io.swagger.annotations.*;
-
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -24,8 +24,9 @@ import java.util.List;
 public class ApiApiController implements ApiApi {
 
     public ResponseEntity<Long> fibonacciGet(@ApiParam(value = "The index (n) of the fibonacci sequence", required = true) @RequestParam(value = "n", required = true) Long n) {
-        int body = Utils.fibonacci(n);
-        return new ResponseEntity<Long>(HttpStatus.OK);
+        HttpHeaders httpHeaders = new HttpHeaders();
+        long result = Utils.fibonacci(n);
+        return new ResponseEntity<Long>(result, httpHeaders,HttpStatus.OK);
     }
 
     public ResponseEntity<Long> reverseWordsGet(@ApiParam(value = "A sentence") @RequestParam(value = "sentence", required = false) String sentence) {
