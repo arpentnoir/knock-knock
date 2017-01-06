@@ -53,8 +53,8 @@ public class Utils {
     return "";
   }
 
-  public static void main(String[] args){
-    System.out.println(reverseWords("this is a sentence"));
-    System.out.println(reverseWord("pumpernickel"));
-  }
+//  public static void main(String[] args){
+//    System.out.println(reverseWords("this is a sentence"));
+//    System.out.println(reverseWord("pumpernickel"));
+//  }
 }
