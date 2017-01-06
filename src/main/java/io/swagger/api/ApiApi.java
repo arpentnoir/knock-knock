@@ -40,7 +40,7 @@ public interface ApiApi {
     @ApiOperation(value = "Your token.", notes = "Your token.", response = String.class, tags={ "Token", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = String.class) })
-    @RequestMapping(value = "/api/Token",
+    @RequestMapping(value = "/api/token",
         produces = { "application/json", "text/json" }, 
         method = RequestMethod.GET)
     ResponseEntity<String> tokenGet();
