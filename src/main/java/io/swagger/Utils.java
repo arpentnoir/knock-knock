@@ -12,8 +12,7 @@ public class Utils {
 
     if(Math.abs(n) > 92){
       throw new NumberFormatException();
-    }
-    if(n == 0){
+    } else if(n == 0){
       return 0;
     } else if(n < 0){
       return -1 * (int) Math.pow(-1, n) * fibonacci(n * -1);
