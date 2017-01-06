@@ -23,7 +23,7 @@ public interface ApiApi {
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = Long.class) })
     @RequestMapping(value = "/api/Fibonacci",
-        produces = { "application/json", "text/json" }, 
+        produces = { "application/json", "text/json" },
         method = RequestMethod.GET)
     ResponseEntity<Long> fibonacciGet(@ApiParam(value = "The index (n) of the fibonacci sequence", required = true) @RequestParam(value = "n", required = true) Long n);
 

@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class ApiApiController implements ApiApi {
 
     public ResponseEntity<Long> fibonacciGet(@ApiParam(value = "The index (n) of the fibonacci sequence", required = true) @RequestParam(value = "n", required = true) Long n) {
-        HttpHeaders responseHeaders = new HttpHeaders();
+      HttpHeaders responseHeaders = new HttpHeaders();
         long result = Utils.fibonacci(n);
         return new ResponseEntity<Long>(result, responseHeaders,HttpStatus.OK);
     }
@@ -30,11 +30,33 @@ public class ApiApiController implements ApiApi {
     public ResponseEntity<String> tokenGet() {
       HttpHeaders responseHeaders = new HttpHeaders();
 
+//      {
+//        "pragma": "no-cache",
+//          "date": "Fri, 06 Jan 2017 03:54:29 GMT",
+//          "content-encoding": "gzip",
+//          "server": "Microsoft-IIS/8.0",
+//          "x-aspnet-version": "4.0.30319",
+//          "x-powered-by": "ASP.NET",
+//          "vary": "Accept-Encoding",
+//          "content-type": "application/json; charset=utf-8",
+//          "cache-control": "no-cache",
+//          "content-length": "130",
+//          "expires": "-1"
+//      }
+
+//      {
+//        "date": "Fri, 06 Jan 2017 03:57:34 GMT",
+//          "via": "1.1 vegur",
+//          "server": "Apache-Coyote/1.1",
+//          "connection": "keep-alive",
+//          "content-length": "36",
+//          "content-type": "text/json;charset=UTF-8"
+//      }
       //responseHeaders.set("pragma", "no-cache");
       //responseHeaders.set("content-encoding", "gzip");
 
-      String token = "03c5e92c-292d-45f6-a74b-dc7981f6d821";
-      return new ResponseEntity<String>(token, responseHeaders, HttpStatus.OK);
+      String token = "\"03c5e92c-292d-45f6-a74b-dc7981f6d821\"";
+      return new ResponseEntity<String>(token, HttpStatus.OK);
     }
 
     public ResponseEntity<Integer> triangleTypeGet(@ApiParam(value = "The length of side a", required = true) @RequestParam(value = "a", required = true) Integer a,
