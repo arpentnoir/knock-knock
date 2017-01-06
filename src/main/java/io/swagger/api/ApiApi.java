@@ -34,7 +34,7 @@ public interface ApiApi {
     @RequestMapping(value = "/api/ReverseWords",
         produces = { "application/json", "text/json" }, 
         method = RequestMethod.GET)
-    ResponseEntity<Long> reverseWordsGet(@ApiParam(value = "A sentence") @RequestParam(value = "sentence", required = false) String sentence);
+    ResponseEntity<String> reverseWordsGet(@ApiParam(value = "A sentence") @RequestParam(value = "sentence", required = false) String sentence);
 
 
     @ApiOperation(value = "Your token.", notes = "Your token.", response = String.class, tags={ "Token", })
