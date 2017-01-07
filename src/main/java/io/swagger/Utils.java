@@ -8,7 +8,7 @@ import java.util.StringTokenizer;
  */
 public class Utils {
 
-  public static int fibonacci(long n){
+  public static long fibonacci(long n){
 
     if(Math.abs(n) > 92 || n == Long.MIN_VALUE){
       throw new NumberFormatException();
@@ -19,9 +19,9 @@ public class Utils {
     } else if(n < 3){
       return 1;
     }
-    int result = 2;
-    int g = 1;
-    int h = 1;
+    long result = 2;
+    long g = 1;
+    long h = 1;
 
     for(int i = 2; i < n; i++){
       result = g + h;
