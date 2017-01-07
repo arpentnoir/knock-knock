@@ -15,7 +15,7 @@ public class Utils {
     } else if(n == 0){
       return 0;
     } else if(n < 0){
-      return -1 * (int) Math.pow(-1, n) * fibonacci(n * -1);
+      return -1 * (long) Math.pow(-1, n) * fibonacci(n * -1);
     } else if(n < 3){
       return 1;
     }
