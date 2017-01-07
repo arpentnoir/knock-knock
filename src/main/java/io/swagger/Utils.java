@@ -58,20 +58,20 @@ public class Utils {
 
     if(a <= 0 || b <= 0 || c <= 0){
       return "\"Error\"";
-    } else if(array[2] >= array[0] + array[1]){
-      return "\"Error\"";
     } else if (a == b & a == c){
       return "\"Equilateral\"";
     } else if(a != b & a != c & b != c){
       return "\"Scalene\"";
     } else if(a == b || a == c || b == c){
       return "\"Isosceles\"";
-    }
+    } else if(array[2] >= array[0] + array[1]){
+    return "\"Error\"";
+  }
 
     return "";
   }
 
-//  public static void main(String[] args){
+  public static void main(String[] args){
 //    System.out.println(fibonacci(5));
 //    System.out.println(fibonacci(-5));
 //    System.out.println(fibonacci(6));
@@ -86,7 +86,8 @@ public class Utils {
 //    System.out.println(triangleType(1, 1, -1));
 //    System.out.println(triangleType(3, 3, 5000));
 //    System.out.println(triangleType(1, 1, 2147483647));
-//    System.out.println(triangleType(-2147483648, -2147483648, -2147483648));
+    System.out.println(triangleType(-2147483648, -2147483648, -2147483648));
+    System.out.println(triangleType(2147483647, 2147483647, 2147483647));
 //    System.out.println(triangleType(1, 1, 1));
 //    System.out.println(triangleType(2147483647, 2147483647, 2147483647));
 //    System.out.println(triangleType(3, 3, 5));
@@ -102,5 +103,5 @@ public class Utils {
 //    System.out.println(reverseWord("pumpernickel"));
 //
 //
-//  }
+  }
 }
