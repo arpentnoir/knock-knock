@@ -37,7 +37,7 @@ public class Utils {
     while (tokenizer.hasMoreTokens()){
       reversed.append(reverseWord((String) tokenizer.nextElement()) + " ");
     }
-    return reversed.toString();
+    return "\"" + reversed.toString() + "\"";
   }
 
   public static String reverseWord(String word){
