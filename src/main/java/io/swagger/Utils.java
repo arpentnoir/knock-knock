@@ -71,7 +71,7 @@ public class Utils {
     return "";
   }
 
-  public static void main(String[] args){
+//  public static void main(String[] args){
 //    System.out.println(fibonacci(5));
 //    System.out.println(fibonacci(-5));
 //    System.out.println(fibonacci(6));
@@ -99,9 +99,9 @@ public class Utils {
 //    System.out.println(triangleType(2147483647, 2147483647, 2147483647));
 //
 //
-    System.out.println(reverseWords(" this is a sentence"));
-    System.out.println(reverseWord("pumpernickel"));
+//    System.out.println(reverseWords(" this is a sentence"));
+//    System.out.println(reverseWord("pumpernickel"));
 //
 //
-  }
+//  }
 }
