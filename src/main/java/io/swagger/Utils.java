@@ -32,10 +32,10 @@ public class Utils {
   }
 
   public static String reverseWords(String sentence){
-    StringTokenizer tokenizer = new StringTokenizer(sentence);
+    StringTokenizer tokenizer = new StringTokenizer(sentence, " ", true);
     StringBuilder reversed = new StringBuilder();
     while (tokenizer.hasMoreTokens()){
-      reversed.append(reverseWord((String) tokenizer.nextElement()) + " ");
+      reversed.append(reverseWord((String) tokenizer.nextElement()));
     }
     return "\"" + reversed.toString() + "\"";
   }
@@ -86,8 +86,8 @@ public class Utils {
 //    System.out.println(triangleType(1, 1, -1));
 //    System.out.println(triangleType(3, 3, 5000));
 //    System.out.println(triangleType(1, 1, 2147483647));
-    System.out.println(triangleType(-2147483648, -2147483648, -2147483648));
-    System.out.println(triangleType(2147483647, 2147483647, 2147483647));
+//    System.out.println(triangleType(-2147483648, -2147483648, -2147483648));
+//    System.out.println(triangleType(2147483647, 2147483647, 2147483647));
 //    System.out.println(triangleType(1, 1, 1));
 //    System.out.println(triangleType(2147483647, 2147483647, 2147483647));
 //    System.out.println(triangleType(3, 3, 5));
@@ -99,8 +99,8 @@ public class Utils {
 //    System.out.println(triangleType(2147483647, 2147483647, 2147483647));
 //
 //
-//    System.out.println(reverseWords("this is a sentence"));
-//    System.out.println(reverseWord("pumpernickel"));
+    System.out.println(reverseWords(" this is a sentence"));
+    System.out.println(reverseWord("pumpernickel"));
 //
 //
   }
